@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<%@ page import="java.io.File" %>
+<%@ page import="file.fileDAO" %>
+<%@ page import="java.util.ArrayList" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +41,7 @@
 	      </li>
 	      
 	      <li class="nav-item">
-              <a class="nav-link" href="picturerepo.jsp">Picture Repository</a>
+              <a class="nav-link" href="pictureRepo.jsp">Picture Repository</a>
       	  </li>
 
 	    </ul>
@@ -76,9 +80,21 @@
 	        	<br>
 		        <div class="jumbotron">
 		        	<p>
-		        		여기는 사진이 담기는 곳입니다.
+		        		<%
 		        		
-		        		아이디를 키삼아서 아이디에 맞는 사진을 이쁘게 가져오면 됩니다.
+		        			if(userID != null){
+		        				String directory = application.getRealPath("/upload/");
+			        			ArrayList<String> files = new fileDAO().getPictureNameForID(userID);
+
+			        			for(String file : files){
+			        				out.write("<a href=\"" + request.getContextPath() + "/fileDownload?file=" + java.net.URLEncoder.encode(file, "UTF-8") + "\">" + file + "</a><br>");
+			        			}
+		        			} else {
+		        				out.write("로그인이 필요한 서비스입니다.");
+		        			}
+		        			
+		        			
+		        		%>
 		        		
 		        	</p>
 		        </div>

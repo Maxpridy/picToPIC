@@ -33,7 +33,7 @@
 	      </li>
 	      
 	      <li class="nav-item">
-              <a class="nav-link" href="picturerepo.jsp">Picture Repository</a>
+              <a class="nav-link" href="pictureRepo.jsp">Picture Repository</a>
       	  </li>
 
 	    </ul>
