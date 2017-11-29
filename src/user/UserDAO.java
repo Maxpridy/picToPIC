@@ -71,16 +71,16 @@ public class UserDAO {
 		}
 	}
 	
-	public int login(String userID, String userPassword) {
+	public int login(UserDTO user) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String query = "SELECT * FROM user WHERE userID=?";
 		try {
 			pstmt = (PreparedStatement) conn.prepareStatement(query);
-			pstmt.setString(1, userID);
+			pstmt.setString(1, user.getUserID());
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				if(rs.getString("userPassword").equals(userPassword)) {
+				if(rs.getString("userPassword").equals(user.getUserPassword())) {
 					return 1; // 로그인 성공
 				}
 				return 2; // 비밀번호 틀림

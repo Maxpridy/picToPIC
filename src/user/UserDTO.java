@@ -15,6 +15,12 @@ public class UserDTO {
 		this.userEmail = userEmail;
 	}
 	
+	public UserDTO(String userID, String userPassword) {
+		super();
+		this.userID = userID;
+		this.userPassword = userPassword;
+	}
+	
 	public String getUserID() {
 		return userID;
 	}

@@ -8,6 +8,7 @@ window.addEventListener("load", function () {
     var source = document.getElementById("source");
     var image2x = document.getElementById("image2x");
     var result = document.getElementById("result");
+    var fileresult = document.getElementById("fileresult");
 
     var progress = document.getElementById("progress");
     var time = document.getElementById("time");
@@ -76,6 +77,7 @@ window.addEventListener("load", function () {
                 time.textContent = (Date.now() - start)/60000 + "m";
                 var img = rgb2img(ev.data.rgb2x, "waifu2x");
                 result.appendChild(img);
+                fileresult.appendChild(img);
                 worker.terminate();
                 file.disabled = false;
                 models.disabled = false;

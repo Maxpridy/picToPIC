@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>pic To PIC</title>
 	
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -76,14 +76,14 @@
 
 	    <div class="row">
 	        <div class="col-md-8">
-	        	<br>
-		        <label class="btn-bs-file btn btn-info" style="
-				    display: block;
-				    margin: 0 auto;">
-	                CHOOSE AN IMAGE
-	                <input type="file" id="file" />
-	            </label>
-	            
+	        	<br>	     
+			        <label class="btn-bs-file btn btn-info" style="
+					    display: block;
+					    margin: 0 auto;">
+		                CHOOSE AN IMAGE	                
+		                <input type="file" id="file" />	                	 
+		            </label>
+	            	          	            
 	            <div>
     				<input id="models" value="lib/z-scale2.0x_model.json" style="visibility: hidden;">
     			</div>
@@ -111,11 +111,17 @@
 				></div>
 
 			    <hr />
+			    
 			    <div>
 			      Result<br>
 			      <span id="result"></span>
+			      <input style="visibility: hidden;" id="fileresult" type="file" name="file">
 			    </div>
-				        
+			    
+			    <form action="uploadFile.jsp" method="post" enctype="multipart/form-data">
+			    	<input style="visibility: hidden;" id="fileresult" type="file" name="file"> 
+				    <input style="float: right;"class="btn btn-success" type="submit" value="Picture Repository에 저장"> 
+				</form>        
 	        </div>
 
 			<div class="col-md-4">

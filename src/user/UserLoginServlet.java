@@ -30,7 +30,7 @@ public class UserLoginServlet extends HttpServlet {
 			return;
 		}
 		
-		int result = new UserDAO().login(userID, userPassword);
+		int result = new UserDAO().login(new UserDTO(userID, userPassword));
 		
 		if(result == 1) {
 			request.getSession().setAttribute("userID", userID);
