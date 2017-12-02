@@ -1,7 +1,7 @@
 window.addEventListener("load", function () {
     "use strict";
 
-    window.bar = document.getElementById("myProgressbar").ldBar;
+    var bar = document.getElementById("myProgressbar").ldBar;
     var models = document.getElementById("models");
     var file = document.getElementById("file");
 
@@ -102,9 +102,12 @@ window.addEventListener("load", function () {
 	                }
                 });
                 
+                bar.set(100);
                 worker.terminate();
                 file.disabled = false;
                 models.disabled = false;
+                $('#file').val('');
+                
             } else {
                 console.log("unknown message", ev.data);
             }
@@ -190,4 +193,6 @@ window.addEventListener("load", function () {
 
         return text;
     }
+    
 });
+

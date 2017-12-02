@@ -81,7 +81,7 @@
 					    display: block;
 					    margin: 0 auto;">
 		                CHOOSE AN IMAGE	                
-		                <input type="file" id="file" />	                	 
+		                <input type="file" id="file" onclick="emptyIndexPage()" />	                	 
 		            </label>
 	            	          	            
 	            <div>
@@ -115,33 +115,51 @@
 			    <div>
 			      Result<br>
 			      <span id="result"></span>
-			      <input style="visibility: hidden;" id="fileresult" type="file" name="file">
 			    </div>
-			    
-			    <form action="uploadFile.jsp" method="post" enctype="multipart/form-data">
-			    	<input style="visibility: hidden;" id="fileresult" type="file" name="file"> 
-				    <input style="float: right;"class="btn btn-success" type="submit" value="Picture Repository에 저장"> 
-				</form>        
+			         
 	        </div>
 
 			<div class="col-md-4">
 				<br>
 				<div class="jumbotron">
     				<h4>pic To PIC</h4>
-					<br><br>
+    				<br>
 					<p>
-					이 서비스는 CNN을 이용해서 사진의 해상도를 올려주는 서비스입니다. ~~
-					
-					로그인을 하시면 Picture Repository을 이용하실 수 있으며 변환한 사진이 자동으로 저장됩니다. 
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					
-					주의. 너무 큰 파일은 시간이 매우 오래 걸립니다. 또한 서버에도 부하가 걸리니 너무 큰 파일은 변환이 어렵습니다.
+						pic To PIC은?
+						CNN을 이용한 방법으로 화질손상 없는 이미지 업스케일링을 제공합니다.
+						<br>
+						작은 이미지를 크게 바꿔보세요!
+					</p>
+						
+					<p>
+						1. CHOOSE AN IMAGE를 클릭하여 이미지를 등록합니다.
+						<br>
+						<br>
+						2. 등록된 이미지가 변환되는것을 기다립니다.
+						<br>
+						<br>
+						3. 변환이 완료된 이미지를 클릭하시면 다운로드가 가능합니다.
+						<br>
+						<br>
+						4. 회원가입후 로그인하시면 이미지를 서버에 저장하여 편리하게 사용이 가능합니다.
+					</p>
+						
+						※ 주의 : 이미지의 크기에 따라 변환에 아주 많은 시간이 소요될수있습니다.
 					</p>
     				
   				</div>
     		</div>
 	    </div>
 	</div>
+	
+	<script>
+		$('#file').click(function() {
+			$('#image2x').empty();
+		    $('#result').empty();
+			var bar = document.getElementById("myProgressbar").ldBar;
+			bar.set(0);
+		});
+	</script>
 
 	<script src="lib/rgb2yuv.js"></script>
     <script src="lib/loadjson.js"></script>
