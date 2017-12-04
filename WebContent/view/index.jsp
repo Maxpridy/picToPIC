@@ -13,6 +13,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 	
+	<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+	
 	<link rel="stylesheet" type="text/css" href="lib/loading-bar.css"/>
 	<script type="text/javascript" src="lib/loading-bar.js"></script>
 	
@@ -27,50 +30,53 @@
 		}
 	%>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="index.jsp">pic To PIC</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
-	          <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
-	      </li>
-	      
-	      <li class="nav-item">
-              <a class="nav-link" href="pictureRepo.jsp">Picture Repository</a>
-      	  </li>
-	    </ul>
-	    
-	    <%
-	    	if(userID == null) {
-	    %>
-	    
-	    <form action="register.jsp">
-    		<input class="btn btn-outline-info my-2 my-sm-0" style="float: right;" type="submit" value="Sign up" />
-		</form>
-		<form action="login.jsp">
-    		<input class="btn btn-outline-info my-2 my-sm-0" style="float: right;" type="submit" value="Sign in" />
-		</form>
-		
-		<%
-	    	} else {
-		%>
-
-		<form action="logout.jsp">
-    		<input class="btn btn-outline-info my-2 my-sm-0" style="float: right;" type="submit" value="Sign out" />
-		</form>
-		
-		<%
-	    	}
-		%>
-	    
-	  </div>
-	  
-	</nav>
-
+	<div class="container show-grid">
+	<div class="col-md-12">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="index.jsp">pic To PIC</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+	
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		          <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      
+		      <li class="nav-item">
+	              <a class="nav-link" href="pictureRepo.jsp">Picture Repository</a>
+	      	  </li>
+		    </ul>
+		    
+		    <%
+		    	if(userID == null) {
+		    %>
+		    
+		    <form action="register.jsp">
+	    		<input class="btn btn-outline-info my-2 my-sm-0" style="float: right;" type="submit" value="Sign up" />
+			</form>
+			<form action="login.jsp">
+	    		<input class="btn btn-outline-info my-2 my-sm-0" style="float: right;" type="submit" value="Sign in" />
+			</form>
+			
+			<%
+		    	} else {
+			%>
+	
+			<form action="logout.jsp">
+	    		<input class="btn btn-outline-info my-2 my-sm-0" style="float: right;" type="submit" value="Sign out" />
+			</form>
+			
+			<%
+		    	}
+			%>
+		    
+		  </div>
+		  
+		</nav>
+	</div>
+	</div>
 	<div class="container show-grid">
 			
 
@@ -81,7 +87,7 @@
 					    display: block;
 					    margin: 0 auto;">
 		                CHOOSE AN IMAGE	                
-		                <input type="file" id="file" onclick="emptyIndexPage()" />	                	 
+		                <input type="file" id="file"/>	                	 
 		            </label>
 	            	          	            
 	            <div>
@@ -126,7 +132,7 @@
     				<br>
 					<p>
 						pic To PIC은?
-						CNN을 이용한 방법으로 화질손상 없는 이미지 업스케일링을 제공합니다.
+						CNN을 이용한 방법으로 Super Resolution된 이미지를 제공합니다.
 						<br>
 						작은 이미지를 크게 바꿔보세요!
 					</p>
@@ -144,6 +150,7 @@
 						4. 회원가입후 로그인하시면 이미지를 서버에 저장하여 편리하게 사용이 가능합니다.
 					</p>
 						
+					<p>
 						※ 주의 : 이미지의 크기에 따라 변환에 아주 많은 시간이 소요될수있습니다.
 					</p>
     				

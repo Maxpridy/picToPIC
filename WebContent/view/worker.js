@@ -1,4 +1,5 @@
 "use strict";
+
 self.importScripts("lib/convolve.js", "lib/rgb2yuv.js", "lib/waifu2x.js");
 
 self.postMessage({msg: "script loaded: " + typeof waifu2x});

@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
-public class fileDAO {
+public class FileDAO {
 	
 	private Connection conn;
 	
-	public fileDAO() {
+	public FileDAO() {
 		try {
 			String dbURL = "jdbc:mysql://localhost:3306/pictopic";
 			String dbID = "root";
@@ -25,7 +25,7 @@ public class fileDAO {
 		}
 	}
 	
-	public int upload(fileDTO file) {
+	public int upload(FileDTO file) {
 		String query = "INSERT INTO file VALUES (?, ?, ?)";
 		try {
 			PreparedStatement pstmt = (PreparedStatement) conn.prepareStatement(query);

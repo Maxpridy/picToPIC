@@ -94,7 +94,6 @@ window.addEventListener("load", function () {
 	                contentType : false, // false : multipart/form-data 형태로 전송되기 위한 옵션값
 	                success: function(data) {
 	                    console.log("success");
-	                    console.log(data);
 	                },
 	                error: function(data) {
 	                    console.log("error");

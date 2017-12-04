@@ -20,34 +20,38 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="index.jsp">pic To PIC</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
-	          <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
-	      </li>
-	      
-	      <li class="nav-item">
-              <a class="nav-link" href="pictureRepo.jsp">Picture Repository</a>
-      	  </li>
-
-	    </ul>
-	    
-	    <form action="register.jsp">
-    		<input class="btn btn-outline-info my-2 my-sm-0" style="float: right;" type="submit" value="Sign up" />
-		</form>
-		<form action="login.jsp">
-    		<input class="btn btn-outline-info my-2 my-sm-0" style="float: right;" type="submit" value="Sign in" />
-		</form>
-		
-	  </div>
-	  
-	</nav>
+	<div class="container show-grid">
+	<div class="col-md-12">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="index.jsp">pic To PIC</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+	
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		          <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      
+		      <li class="nav-item">
+	              <a class="nav-link" href="pictureRepo.jsp">Picture Repository</a>
+	      	  </li>
+	
+		    </ul>
+		    
+		    <form action="register.jsp">
+	    		<input class="btn btn-outline-info my-2 my-sm-0" style="float: right;" type="submit" value="Sign up" />
+			</form>
+			<form action="login.jsp">
+	    		<input class="btn btn-outline-info my-2 my-sm-0" style="float: right;" type="submit" value="Sign in" />
+			</form>
+			
+		  </div>
+		  
+		</nav>
+	</div>
+	</div>
 
 	<div class="container show-grid">
 
@@ -69,7 +73,7 @@
 	        				</tr>
 	        				<tr>
 	        					<td style="width: 110px;"><h6>비밀번호</h6></td>
-	        					<td><input class="form-control" type="text" name="userPassword" maxlength="20"></td>
+	        					<td><input class="form-control" type="password" name="userPassword" maxlength="20"></td>
 	        				</tr>
 	        				<tr>
 	        					<td style="text-align: left" colspan="2"><input class="btn btn-primary pull-right" type="submit" value="로그인"></td>

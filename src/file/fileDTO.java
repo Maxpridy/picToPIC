@@ -1,12 +1,12 @@
 package file;
 
-public class fileDTO {
+public class FileDTO {
 	
 	String userID;
 	String fileName;
 	String fileRealName;
 	
-	public fileDTO(String userID, String fileName, String fileRealName) {
+	public FileDTO(String userID, String fileName, String fileRealName) {
 		super();
 		this.userID = userID;
 		this.fileName = fileName;
